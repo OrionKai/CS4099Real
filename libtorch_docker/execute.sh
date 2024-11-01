@@ -1,0 +1,1 @@
+./wasmedge-wasinn-example-mobilenet-image mobilenet.pt input.jpg
