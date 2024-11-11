@@ -1,0 +1,21 @@
+[package]
+name = "wasmedge-wasinn-example-mobilenet-image"
+version = "0.1.0"
+authors = ["Second-State"]
+readme = "README.md"
+edition = "2021"
+publish = false
+
+[dependencies]
+image = { version = "0.23.14", default-features = false, features = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld"]  }
+tch = { git = "https://github.com/LaurentMazare/tch-rs", rev = "4841b68" }
+
+[[bin]]
+name = "wasmedge-wasinn-example-mobilenet-image"
+path = "src/main.rs"
+
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"
+ar = "aarch64-linux-gnu-ar"
+
+[workspace]
