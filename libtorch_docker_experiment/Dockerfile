@@ -15,12 +15,13 @@ RUN case "$TARGETARCH" in \
     esac && \
     rustup target add $RUST_TARGET
 
-
 WORKDIR /app
 
+# Copy source code and Cargo config
 COPY src ./src
 COPY Cargo.toml Cargo.lock ./
 
+# Build the app
 RUN cargo build --release --target $RUST_TARGET
 
 # Final stage: create runtime image
